@@ -44,9 +44,5 @@ func AddressIsValid(address string) bool {
 	sumBytes := h.Sum(nil)
 	sum := base32Encode(revertBytes(sumBytes[:5]))
 
-	if sum != origSum {
-		return false
-	}
-
-	return true
+	return sum == origSum[len(origSum)-len(sum):]
 }
