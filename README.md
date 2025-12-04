@@ -19,7 +19,7 @@ You need another feature? Open an [issue](https://github.com/zenitria/bananogo/i
 ## Installation
 Use `go get` to install the package.
 ```bash
-go get github.com/zenitria/bannanogo@latest
+go get github.com/zenitria/bananogo@latest
 ```
 
 ## Example usage
