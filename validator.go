@@ -1,9 +1,10 @@
 package bananogo
 
 import (
-	"golang.org/x/crypto/blake2b"
 	"regexp"
 	"strings"
+
+	"golang.org/x/crypto/blake2b"
 )
 
 // AddressIsValid checks if the wallet address is valid,
@@ -32,7 +33,7 @@ func AddressIsValid(address string) bool {
 	}
 
 	withoutPrefix := strings.ReplaceAll(address, "ban_", "")
-	origSum := withoutPrefix[len(withoutPrefix)-8 : len(withoutPrefix)]
+	origSum := withoutPrefix[len(withoutPrefix)-8:]
 	h, err := blake2b.New(5, nil)
 
 	if err != nil {
