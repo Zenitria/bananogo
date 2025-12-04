@@ -381,11 +381,7 @@ func (c *Client) Send(toAddress, raw, seed string, index int) (string, error) {
 		return "", err
 	}
 
-	balRaw, err := BananoToRaw(info.ConfirmedBalance)
-
-	if err != nil {
-		return "", err
-	}
+	balRaw := info.ConfirmedBalance
 
 	bal, ok := new(big.Int).SetString(balRaw, 10)
 
@@ -467,11 +463,7 @@ func (c *Client) ChangeRepresentative(representative, seed string, index int) (s
 		return "", err
 	}
 
-	balRaw, err := BananoToRaw(info.ConfirmedBalance)
-
-	if err != nil {
-		return "", err
-	}
+	balRaw := info.ConfirmedBalance
 
 	block := Block{
 		Type:           "state",
@@ -543,11 +535,7 @@ func (c *Client) Receive(hash, sourceAddress, raw, seed string, index int) (stri
 		return "", err
 	}
 
-	balRaw, err := BananoToRaw(info.ConfirmedBalance)
-
-	if err != nil {
-		return "", err
-	}
+	balRaw := info.ConfirmedBalance
 
 	bal, ok := new(big.Int).SetString(balRaw, 10)
 
